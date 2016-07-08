@@ -1,7 +1,7 @@
 defmodule SepomexApi.ZipController do
   use SepomexApi.Web, :controller
 
-  alias SepomexApi.Zip
+  # alias SepomexApi.Zip
 
   def show(conn, %{"id" => id}) do
     zips = Repo.all(
