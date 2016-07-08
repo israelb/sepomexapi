@@ -38,6 +38,6 @@ defmodule SepomexApi.Endpoint do
     key: "_sepomex_api_key",
     signing_salt: "oh0r4P3H"
 
-  plug PlugCors, origins: ["*"]
+  plug PlugCors, origins: ["http://localhost"]
   plug SepomexApi.Router
 end
