@@ -72,7 +72,7 @@ defmodule SepomexApi.Seeds do
 
 end
 
-File.stream!("/zip_codes.csv")
+File.stream!("./zip_codes.csv")
   |> Stream.drop(1)
   |> CSV.decode(headers: [:d_codigo, :d_asenta, :d_tipo_asenta, :d_mnpio, :d_estado, :d_ciudad, :d_zona])
   |> Enum.each(&SepomexApi.Seeds.store_it/1)
