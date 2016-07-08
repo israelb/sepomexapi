@@ -2,7 +2,7 @@ defmodule SepomexApi.Router do
   use SepomexApi.Web, :router
 
   pipeline :api do
-    plug CORSPlug, [origin: "http://127.0.0.1:3000"]
+    # plug CORSPlug, [origin: "http://localhost"]
     plug :accepts, ["json"]
   end
 
@@ -10,5 +10,6 @@ defmodule SepomexApi.Router do
     pipe_through :api
 
     resources "/zips", ZipController, only: [:show]
+    # options "/zips", ZipController, :options
   end
 end
