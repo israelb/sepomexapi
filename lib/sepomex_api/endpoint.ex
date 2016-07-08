@@ -38,7 +38,7 @@ defmodule SepomexApi.Endpoint do
     key: "_sepomex_api_key",
     signing_salt: "oh0r4P3H"
 
-  plug CORSPlug, [origin: "http://localhost:3000"]
+  plug CORSPlug, [origin: "*"]
 
   plug SepomexApi.Router
 end
