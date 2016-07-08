@@ -37,7 +37,7 @@ defmodule SepomexApi.Mixfile do
      {:gettext, "~> 0.11"},
      {:csv, "~> 1.4.2"},
      {:word_smith, "~> 0.1.0"},
-     {:plug_cors, "~> 0.7.3"},
+     {:cors_plug, "~> 1.1"},
      {:cowboy, "~> 1.0"}]
   end
 
