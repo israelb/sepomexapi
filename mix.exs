@@ -36,6 +36,8 @@ defmodule SepomexApi.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
      {:csv, "~> 1.4.2"},
+     {:word_smith, "~> 0.1.0"},
+     {:plug_cors, "~> 0.7.3"},
      {:cowboy, "~> 1.0"}]
   end
 

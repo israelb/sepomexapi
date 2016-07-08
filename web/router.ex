@@ -8,9 +8,6 @@ defmodule SepomexApi.Router do
   scope "/api", SepomexApi do
     pipe_through :api
 
-    resources "/zips", ZipController, except: [:new, :edit]
-
-    post "/uploadzips", ZipController, :upload
-
+    resources "/zips", ZipController, only: [:show]
   end
 end

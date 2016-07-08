@@ -17,13 +17,62 @@ alias SepomexApi.Repo
 defmodule SepomexApi.Seeds do
 
   def store_it(row) do
-    changeset = Zip.changeset(%Zip{}, row)
+    # Map.put_new row, :codigo, "JAL"
+
+    # new_row = _get_code_estado(row[:d_estado])
+
+    new_row = Map.put_new(row, :codigo_estado, _get_code_estado(row[:d_estado]))
+
+    changeset = Zip.changeset(%Zip{}, new_row)
     Repo.insert!(changeset)
+  end
+
+  defp _get_code_estado(estado) do
+    case _normalize(estado) do
+      "aguascalientes" -> "AGS"
+      "baja california" -> "BCN"
+      "baja california sur" -> "BCS"
+      "campeche" -> "CAM"
+      "coahuila de zaragoza" -> "COAH"
+      "colima" -> "COL"
+      "chiapas" -> "CHIS"
+      "chihuahua" -> "CHIH"
+      "ciudad de mexico" -> "DF"
+      "durango" -> "DUR"
+      "guanajuato" -> "GTO"
+      "guerrero" -> "GRO"
+      "hidalgo" -> "HGO"
+      "jalisco" -> "JAL"
+      "mexico" -> "MEX"
+      "michoacan de ocampo" -> "MICH"
+      "morelos" -> "MOR"
+      "nayarit" -> "NAY"
+      "nuevo leon" -> "NL"
+      "oaxaca" -> "OAX"
+      "puebla" -> "PUE"
+      "queretaro" -> "QRO"
+      "quintana roo" -> "QRO"
+      "san luis potosi" -> "SLP"
+      "sinaloa" -> "SIN"
+      "sonora" -> "SON"
+      "tabasco" -> "TAB"
+      "tamaulipas" -> "TAM"
+      "tlaxcala" -> "TLAX"
+      "veracruz de ignacio de la llave" -> "VER"
+      "yucatan" -> "YUC"
+      "zacatecas" -> "ZAC"
+    end
+  end
+
+  defp _normalize(word) do
+    word
+    |> String.downcase
+    |> WordSmith.remove_accents
   end
 
 end
 
-File.stream!("/Users/wsmoak/Downloads/transactions.csv")
+File.stream!("/home/israel/Documents/elixir/sepomex_api/priv/repo/zip_codes.csv")
   |> Stream.drop(1)
-  |> CSV.decode(headers: [:d_codigo, :d_asenta, :d_tipo_asenta, :D_mnpio, :d_estado, :d_ciudad, :d_CP, :c_estado, :c_oficina, :c_CP, :c_tipo_asenta, :c_mnpio, :id_asenta_cpcons, :d_zona, :c_cve_ciudad])
+  |> CSV.decode(headers: [:d_codigo, :d_asenta, :d_tipo_asenta, :d_mnpio, :d_estado, :d_ciudad, :d_zona])
   |> Enum.each(&SepomexApi.Seeds.store_it/1)

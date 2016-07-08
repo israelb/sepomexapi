@@ -23,7 +23,9 @@ defmodule SepomexApi.Endpoint do
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Poison
+    json_decoder: Poison,
+    # Increase request length in Phoenix to upload large files
+    length: 100_000_000
 
   plug Plug.MethodOverride
   plug Plug.Head
@@ -36,5 +38,6 @@ defmodule SepomexApi.Endpoint do
     key: "_sepomex_api_key",
     signing_salt: "oh0r4P3H"
 
+  plug PlugCors, origins: ["*"]
   plug SepomexApi.Router
 end
