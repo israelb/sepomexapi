@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :sepomex_api, SepomexApi.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [scheme: "https", host: "fast-spire-85782.herokuapp.com", port: 443],
+  url: [scheme: "http", host: "ec2-52-34-149-248.us-west-2.compute.amazonaws.com", port: 80],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
@@ -21,9 +21,11 @@ config :sepomex_api, SepomexApi.Endpoint,
 # Configure your database
 config :sepomex_api, SepomexApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-  ssl: true
+  url: "staging.cqny1yo1se1s.us-west-2.rds.amazonaws.com",
+  username: "pokemon",
+  password: "pikachu0",
+  database: "sepomex",
+  pool_size: 10
 
 # Do not print debug messages in production
 config :logger, level: :info
