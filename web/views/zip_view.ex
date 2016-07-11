@@ -9,6 +9,8 @@ defmodule SepomexApi.ZipView do
         status: "success",
         message: %{
           codigoPostal: item.d_codigo,
+          d_mnpio: item.d_mnpio,
+          d_ciudad: item.d_ciudad,
           asentas: render_many(zips, SepomexApi.ZipView, "asentas.json"),
           codigo_estado: item.codigo_estado,
           d_estado: item.d_estado
