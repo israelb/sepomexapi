@@ -21,7 +21,7 @@ config :sepomex_api, SepomexApi.Endpoint,
 # Configure your database
 config :sepomex_api, SepomexApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: "staging.cqny1yo1se1s.us-west-2.rds.amazonaws.com",
+  url: "sepomex.cqny1yo1se1s.us-west-2.rds.amazonaws.com",
   username: "pokemon",
   password: "pikachu0",
   database: "sepomex",
