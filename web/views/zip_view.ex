@@ -11,7 +11,9 @@ defmodule SepomexApi.ZipView do
           codigoPostal: item.d_codigo,
           asentas: render_many(zips, SepomexApi.ZipView, "asentas.json"),
           codigo_estado: item.codigo_estado,
-          d_estado: item.d_estado
+          d_estado: item.d_estado,
+          d_mnpio: item.d_mnpio,
+          d_ciudad: item.d_ciudad
         }
       }
     else

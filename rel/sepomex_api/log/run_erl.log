@@ -1,0 +1,8 @@
+run_erl [25899] Mon Jul 18 16:30:39 2016
+Args before exec of shell:
+run_erl [25899] Mon Jul 18 16:30:39 2016
+argv[0] = sh
+run_erl [25899] Mon Jul 18 16:30:39 2016
+argv[1] = -c
+run_erl [25899] Mon Jul 18 16:30:39 2016
+argv[2] = exec "/home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/bin/sepomex_api" "console"

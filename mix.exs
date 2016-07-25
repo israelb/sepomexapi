@@ -18,7 +18,7 @@ defmodule SepomexApi.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {SepomexApi, []},
-     applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
+     applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :csv, :word_smith, :cors_plug,
                     :phoenix_ecto, :postgrex]]
   end
 
@@ -38,7 +38,8 @@ defmodule SepomexApi.Mixfile do
      {:csv, "~> 1.4.2"},
      {:word_smith, "~> 0.1.0"},
      {:cors_plug, "~> 1.1"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:exrm, "~> 1.0.8", warn_missing: false}, ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

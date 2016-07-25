@@ -1,0 +1,55 @@
+
+=====
+===== LOGGING STARTED Mon Jul 18 16:30:39 CDT 2016
+=====
+Exec: /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/erts-8.0/bin/erlexec -boot /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/releases/0.0.1/sepomex_api -config /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/running-config/sys.config -boot_var ERTS_LIB_DIR /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/erts-8.0/../lib -env ERL_LIBS /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/lib -pa /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/lib/sepomex_api-0.0.1/consolidated -args_file /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api/running-config/vm.args -mode embedded -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/israel/Documents/elixir/sepomex_api/rel/sepomex_api
+/home/israel/Documents/elixir/sepomex_api/rel/sepomex_api
+Erlang/OTP 19 [erts-8.0] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
+
+16:30:39.511 [info] Running SepomexApi.Endpoint with Cowboy using http://localhost:8888
+Interactive Elixir (1.3.1) - press Ctrl+C to exit (type h() ENTER for help)
+iex(sepomex_api@127.0.0.1)1> 16:33:40.040 request_id=fkqvpqd06bdcfhoqen4i5u5j2lm4350d [info] GET /api/zips/45060
+16:33:40.394 request_id=fkqvpqd06bdcfhoqen4i5u5j2lm4350d [info] Sent 500 in 354ms
+16:33:40.395 [error] #PID<0.1273.0> running SepomexApi.Endpoint terminated
+Server: localhost:8888 (http)
+Request: GET /api/zips/45060
+** (exit) an exception was raised:
+    ** (Postgrex.Error) ERROR (undefined_table): relation "zips" does not exist
+        (ecto) lib/ecto/adapters/sql.ex:405: Ecto.Adapters.SQL.execute_and_cache/7
+        (ecto) lib/ecto/repo/queryable.ex:127: Ecto.Repo.Queryable.execute/5
+        (ecto) lib/ecto/repo/queryable.ex:40: Ecto.Repo.Queryable.all/4
+        (sepomex_api) web/controllers/zip_controller.ex:7: SepomexApi.ZipController.show/2
+        (sepomex_api) web/controllers/zip_controller.ex:1: SepomexApi.ZipController.action/2
+        (sepomex_api) web/controllers/zip_controller.ex:1: SepomexApi.ZipController.phoenix_controller_pipeline/2
+        (sepomex_api) lib/sepomex_api/endpoint.ex:1: SepomexApi.Endpoint.instrument/4
+        (sepomex_api) lib/phoenix/router.ex:261: SepomexApi.Router.dispatch/2
+16:33:41.623 request_id=odjencg3kf9nndg5nn3d1k7i12kil196 [info] GET /api/zips/45060
+16:33:41.848 request_id=odjencg3kf9nndg5nn3d1k7i12kil196 [info] Sent 500 in 225ms
+16:33:41.849 [error] #PID<0.1274.0> running SepomexApi.Endpoint terminated
+Server: localhost:8888 (http)
+Request: GET /api/zips/45060
+** (exit) an exception was raised:
+    ** (Postgrex.Error) ERROR (undefined_table): relation "zips" does not exist
+        (ecto) lib/ecto/adapters/sql.ex:405: Ecto.Adapters.SQL.execute_and_cache/7
+        (ecto) lib/ecto/repo/queryable.ex:127: Ecto.Repo.Queryable.execute/5
+        (ecto) lib/ecto/repo/queryable.ex:40: Ecto.Repo.Queryable.all/4
+        (sepomex_api) web/controllers/zip_controller.ex:7: SepomexApi.ZipController.show/2
+        (sepomex_api) web/controllers/zip_controller.ex:1: SepomexApi.ZipController.action/2
+        (sepomex_api) web/controllers/zip_controller.ex:1: SepomexApi.ZipController.phoenix_controller_pipeline/2
+        (sepomex_api) lib/sepomex_api/endpoint.ex:1: SepomexApi.Endpoint.instrument/4
+        (sepomex_api) lib/phoenix/router.ex:261: SepomexApi.Router.dispatch/2
+
+===== ALIVE Mon Jul 18 16:48:42 CDT 2016
+
+===== ALIVE Mon Jul 18 17:03:42 CDT 2016
+
+===== ALIVE Mon Jul 18 17:18:42 CDT 2016
+
+===== ALIVE Mon Jul 18 17:33:42 CDT 2016
+
+===== ALIVE Mon Jul 18 17:48:42 CDT 2016
+
+===== ALIVE Mon Jul 18 18:03:42 CDT 2016
+
+===== Mon Jul 18 18:09:46 CDT 2016
